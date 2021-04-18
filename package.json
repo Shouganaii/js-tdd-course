@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepush":"npm run lint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepush": "npm run lint",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,9 @@
   },
   "homepage": "https://github.com/Shouganaii/js-tdd-course#readme",
   "dependencies": {
-    "husky": "^6.0.0"
+    "chai": "^4.3.4",
+    "husky": "^6.0.0",
+    "mocha": "^8.3.2"
   },
   "devDependencies": {
     "eslint": "^7.24.0",
