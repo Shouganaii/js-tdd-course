@@ -1,68 +1,20 @@
 /* eslint-disable */
 import { expect } from 'chai'
-import { div, sub, mult, sum } from '../src/main'
+import FizzBuzz from '../src/main';
 
-describe('Calc', () => {
-  //smoke tests
-
-  describe('Smoke tests', () => {
-    it('should exist the method `sum`', () => {
-      expect(sum).to.exist
-      expect(sum).to.be.a('function')
-    });
-
-    it('should exist the method `sub`', () => {
-      expect(sub).to.exist
-      expect(sub).to.be.a('function')
-    });
-
-    it('should exist the method `mult`', () => {
-      expect(mult).to.exist
-      expect(mult).to.be.a('function')
-    });
-
-    it('should exist the method `div`', () => {
-      expect(div).to.exist
-      expect(div).to.be.a('function')
-    });
-
+describe('Main', () => {
+  it('should return `Fizz` when multiple of 3', () => {
+    expect(FizzBuzz(3)).to.be.equal('Fizz')
+    expect(FizzBuzz(6)).to.be.equal('Fizz')
   })
-
-  describe('Sum', () => {
-
-    it('should return 4 when sum(2,2)', () => {
-      expect(sum(2, 2)).to.be.equal(4)
-    })
-
+  it('should return `Buzz` when multiple of 5', () => {
+    expect(FizzBuzz(5)).to.be.equal('Buzz');
+    expect(FizzBuzz(10)).to.be.equal('Buzz');
   })
-  describe('Sub', () => {
-
-    it('should return 4 when sub(6,2)', () => {
-      expect(sub(6, 2)).to.be.equal(4)
-    })
-
-    it('should return -4 when sub(6,10)', () => {
-      expect(sub(6, 10)).to.be.equal(-4)
-    })
-
+  it('should return `FizzBuzz` when multiple of 5 and 3', () => {
+    expect(FizzBuzz(15)).to.be.equal('FizzBuzz');    
   })
-
-  describe('Mult', () => {
-
-    it('should return 4 when mult(2,2)', () => {
-      expect(mult(2, 2)).to.be.equal(4)
-    })
-
+  it('should return the number when non-multiple', () => {
+    expect(FizzBuzz(7)).to.be.equal(7);    
   })
-
-  describe('Div', () => {
-    it('should return 2 when div(4,2)', () => {
-      expect(div(4, 2)).to.equal(2)
-    })
-    it('it should return `não é possível divisão por zero` when divide by 0 ', () => {
-      expect(div(4, 0)).to.equal('não é possível divisão por zero')
-    })
-  })
-
-
 });
